@@ -1,2 +1,101 @@
-# love-page
-cute page
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Favorite Person ❤️</title>
+
+<style>
+body {
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 40px;
+    color: #fff;
+}
+
+.card {
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    max-width: 500px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+#text {
+    font-size: 18px;
+    min-height: 120px;
+    margin-top: 20px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: white;
+    color: #ff4d6d;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.heart {
+    font-size: 35px;
+    margin-top: 15px;
+}
+
+#loveButton {
+    display: none; /* hidden initially */
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>HIIII ANUKU MA 😌❤️</h1>
+
+    <div id="text"></div>
+
+    <button id="nextBtn" onclick="nextMessage()">SLAP ME 👀</button>
+    <button id="loveButton" onclick="openLovePage()">Click this to know how much I love you ❤️</button>
+
+    <div class="heart">💖</div>
+</div>
+
+<script>
+// Messages for first step
+const messages = [
+    "First of all... Why are you urr or yen neega thinking too much? 😒🤍",
+    "Do you really think I’ll leave you halfway? 😤",
+    "I didn’t come into your life for time pass naa iruken ma😌...",
+    "I came to stay with you forever and always. 🤍",
+    "Distance is there... but my love for you? Zero distance 😌",
+    "Even if you push me away...",
+    "I’ll still come back and annoy you and eppavume ill keep loving you 😏🤍",
+    "Because you are my love enda ellame neega thaa ma . 🫶",
+    "So stop being scared or naa enga ill leave you or itha bond break agirum nu ellam dont think okay? en pannalum i wont leave you you will be happy with me i pinky promise you🤍🤍🤍🤍🤍🤍 ",
+    "You’re stuck with me forever 😌💍"
+];
+
+let i = 0;
+
+function nextMessage() {
+    if (i < messages.length) {
+        document.getElementById("text").innerHTML = messages[i];
+        i++;
+    } 
+    if (i === messages.length) {
+        // Show second button after all messages
+        document.getElementById("nextBtn").style.display = "none";
+        document.getElementById("loveButton").style.display = "inline-block";
+    }
+}
+
+// Function to open second page with YouTube BGM + emotional text
+function openLovePage() {
+    // Opens a new window/tab with the second content
